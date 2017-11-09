@@ -2,7 +2,7 @@ import os
 import sys
 from string import Template
 
-dir = os.getcwd()
+dir = os.path.dirname(os.path.realpath(__file__))
 python_cmd = sys.executable
 log_file = os.path.join(dir, 'log.txt')
 script_file = os.path.join(dir, 'tweeter.py')
