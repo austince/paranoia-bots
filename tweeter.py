@@ -1,3 +1,9 @@
+"""
+Bot name: Paranoia Bots
+Author: Austin Cawley-Edwards
+Twitter handles: paranoiabot1, paranoiabot2
+"""
+
 import random
 import re
 import time
@@ -147,8 +153,11 @@ def respond_to_tweet(tweet, nltk_text, tag_user=False):
         noun = similar_nouns(nltk_text, response_nouns=tweet_nouns)
 
     res = make_simple_response(noun)
+
     if tag_user:
         res += '@' + tweet.user.screen_name
+    else:
+        tweet.id = None  # Remove id from tweet so it doesn't get quoted
 
     print('Response: ' + res)
 
