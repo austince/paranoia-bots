@@ -30,3 +30,7 @@ If you only want the `pip` requirements, just do:
 - Many of the books cited here: https://www.bustle.com/articles/24100-11-of-the-most-realistic-portrayals-of-mental-illness-in-novels 
 - https://www.goodreads.com/quotes/tag/paranoia
 - https://github.com/dariusk/corpora
+
+
+## Future
+Maybe implement generation from the paranoid texts like here: https://github.com/williamgilpin/cfgen

@@ -9,3 +9,7 @@
 cron.txt
 
 last-checked*.txt
+
+# Editors
+.idea
+.vscode
