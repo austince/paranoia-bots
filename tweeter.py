@@ -122,12 +122,12 @@ def random_video_tweet():
         os.remove(reversed_path)
 
 
-def video_tweet(query, reply_id):
+def video_tweet(query, response, reply_id):
     reversed_path = reverser.get_reversed(query)
     try:
         print("Posting video")
         with open(reversed_path, 'rb') as media:
-            api.PostUpdate("#TrustNoOne", media=media, in_reply_to_status_id=reply_id)
+            api.PostUpdate(response, media=media, in_reply_to_status_id=reply_id)
     except twitter.TwitterError:  # if an error, let us know
         print('- error posting video!')
     finally:
@@ -158,7 +158,7 @@ def respond_to_tweet(tweet, nltk_text, tag_user=False):
     if random.random() * 5 < 1:
         # 1/5 the time, tweet a video response???
         print("Video response for " + noun)
-        video_tweet(noun, reply_id=tweet.id)
+        video_tweet(noun, res, reply_id=tweet.id)
     else:
         try:
             api.PostUpdate(res, in_reply_to_status_id=tweet.id)

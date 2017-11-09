@@ -1,5 +1,7 @@
 # Paranoia bots
-Austin Cawley-Edawrds
+Austin Cawley-Edwards  
+https://github.com/austince/paranoia-bots
+
 
 **@paranoiabot1** and **@paranoiabot2** very uncertain about the world. It's a scary place with lots of things. 
 Maybe some of the things are listening to them. Maybe some of the things are listening to us.  
