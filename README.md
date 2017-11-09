@@ -23,6 +23,9 @@ You can run this install script `install.sh`, which will set up the `pip` requir
 If you only want the `pip` requirements, just do:  
 `pip install -r requirements.txt`
 
+### FFMPEG
+Tested on: `ffmpeg version 3.0.7-0ubuntu0.16.10.1 `
+
 ## Running
 `python tweeter.py` will run the whole gambit. Chooses a bot to tweet as randomly.
 
@@ -30,7 +33,6 @@ If you only want the `pip` requirements, just do:
 - Many of the books cited here: https://www.bustle.com/articles/24100-11-of-the-most-realistic-portrayals-of-mental-illness-in-novels 
 - https://www.goodreads.com/quotes/tag/paranoia
 - https://github.com/dariusk/corpora
-
 
 ## Future
 Maybe implement generation from the paranoid texts like here: https://github.com/williamgilpin/cfgen
