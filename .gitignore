@@ -1,0 +1,11 @@
+# all python
+*.pyc
+*.pyo
+
+# all .env files
+*.env
+
+# Cronjob file
+cron.txt
+
+last-checked*.txt
