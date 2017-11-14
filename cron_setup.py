@@ -4,7 +4,6 @@ from distutils.spawn import find_executable
 from string import Template
 
 dir = os.path.dirname(os.path.realpath(__file__))
-python_cmd = sys.executable
 update_script = os.path.join(dir, 'update.sh')
 log_file = os.path.join(dir, 'tweets.log')
 tweet_script = os.path.join(dir, 'tweeter.py')
@@ -22,7 +21,7 @@ cron_job_template = Template('''
 ''')
 
 file_text = cron_job_template.substitute(
-    python_cmd=python_cmd,
+    python=sys.executable,
     script=tweet_script,
     log_file=log_file,
     update_script=update_script,
