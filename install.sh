@@ -6,6 +6,9 @@ pip install -r requirements.txt
 python -m nltk.downloader all
 
 rm -f cron.txt
-python cron_setup.py >> cron.txt
+python cron_setup.py >> tweeter-cron.txt
 
-crontab cron.txt
+# Append new cronjob to the list
+crontab -l | cat - tweeter-cron.txt > crontab.txt
+rm tweeter-cron.txt
+crontab crontab.txt

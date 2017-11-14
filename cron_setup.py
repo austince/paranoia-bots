@@ -9,9 +9,9 @@ log_file = os.path.join(dir, 'tweets.log')
 tweet_script = os.path.join(dir, 'tweeter.py')
 
 cron_job_template = Template('''
-# Only posts in the most paranoid hours, from 2am to 5pm
+# Only posts in the most paranoid hours, from 2am to 5am
 # Every day of month, Every month, every day of week
-12,35,58 2,3,4,5 * * * $python_cmd $script >> $log_file
+12,35,58 2,3,4,5 * * * $python $script >> $log_file
 
 # Clear the log once a month
 0 0 1 * * $rm $log_file
