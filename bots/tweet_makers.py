@@ -21,6 +21,7 @@ $noun is brainwashing our ${thing}s to be "$adj" "${verb}ers".
 #${thing}s #ThinkAboutIt #TrustMe
 ''')
 
+
 def brainwash(noun=random.choice(shows),
               thing=random.choice(people),
               adj=random.choice(statesOfDrunk),
@@ -34,12 +35,7 @@ I'm positive they $adv $verb while ${verb2}ing $noun. #ThinkAboutIt
 ''')
 
 
-def all_wondering(person=random.choice(people),def make_brainwash_template(noun=random.choice(shows),
-              thing=random.choice(people),
-              adj=random.choice(statesOfDrunk),
-              verb=random.choice(verbs)["present"]):
-    return brainwash_template.substitute(locals())
-
+def all_wondering(person=random.choice(people),
         adv=random.choice(adverbs),
         verb=random.choice(verbs)["present"],
         verb2=random.choice(verbs)["present"],
