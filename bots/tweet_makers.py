@@ -17,12 +17,11 @@ statesOfDrunk = pycorpora.words.states_of_drunkenness["states_of_drunkenness"]
 people = load_corpus('words/people')
 
 brainwash_template = Template('''
-$tv_show is brainwashing our ${thing}s to be "$adj" "${verb}ers".
+$noun is brainwashing our ${thing}s to be "$adj" "${verb}ers".
 #${thing}s #ThinkAboutIt #TrustMe
 ''')
 
-
-def brainwash(tv_show=random.choice(shows),
+def brainwash(noun=random.choice(shows),
               thing=random.choice(people),
               adj=random.choice(statesOfDrunk),
               verb=random.choice(verbs)["present"]):
@@ -35,7 +34,12 @@ I'm positive they $adv $verb while ${verb2}ing $noun. #ThinkAboutIt
 ''')
 
 
-def all_wondering(person=random.choice(people),
+def all_wondering(person=random.choice(people),def make_brainwash_template(noun=random.choice(shows),
+              thing=random.choice(people),
+              adj=random.choice(statesOfDrunk),
+              verb=random.choice(verbs)["present"]):
+    return brainwash_template.substitute(locals())
+
         adv=random.choice(adverbs),
         verb=random.choice(verbs)["present"],
         verb2=random.choice(verbs)["present"],
@@ -78,12 +82,16 @@ generic3_template = Template('''
 That is just what the $noun wants you to think. #TrustNoOne
 ''')
 
+generic4_template = Template('''
+I read on the radio that ${noun}s poisons us. #TrustNoOne
+''')
 
 def make_simple_response(noun):
     response_template = random.choice([
         generic1_template,
         generic2_template,
-        generic3_template
+        generic3_template,
+        generic4_template,
     ])
 
     return response_template.substitute(noun=noun)

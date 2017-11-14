@@ -140,7 +140,7 @@ def video_tweet(query, response, reply_id):
         os.remove(reversed_path)
 
 
-def respond_to_tweet(tweet, nltk_text, tag_user=False):
+def respond_to_tweet(tweet, nltk_text, tag_user=False, respond_to_user=False):
     text = clean_tweet_text(tweet.text)
     tokens = nltk.word_tokenize(text)
     tagged = nltk.pos_tag(tokens)
@@ -156,7 +156,8 @@ def respond_to_tweet(tweet, nltk_text, tag_user=False):
 
     if tag_user:
         res += '@' + tweet.user.screen_name
-    else:
+
+    if not respond_to_user:
         tweet.id = None  # Remove id from tweet so it doesn't get quoted
 
     print('Response: ' + res)
@@ -164,8 +165,8 @@ def respond_to_tweet(tweet, nltk_text, tag_user=False):
     if debug:
         return
 
-    if random.random() * 5 < 1:
-        # 1/5 the time, tweet a video response???
+    if random.random() * 2 < 1:
+        # half the time, tweet a video response???
         print("Video response for " + noun)
         video_tweet(noun, res, reply_id=tweet.id)
     else:
@@ -212,7 +213,7 @@ if __name__ == "__main__":
     print("Responding to tweets")
     for mention in mentions:
         print("Responding to @" + mention.user.screen_name + ": " + mention.text)
-        respond_to_tweet(mention, paranoid_nltk_text, tag_user=True)
+        respond_to_tweet(mention, paranoid_nltk_text, respond_to_user=True)
 
     # Grab a random tweet and respond to it
 
